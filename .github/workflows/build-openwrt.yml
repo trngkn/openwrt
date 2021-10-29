@@ -71,8 +71,8 @@ jobs:
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
-      run: cd openwrt && make dirclean
+      run: cd openwrt && ./scripts/feeds install -a && make dirclean
+      
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
